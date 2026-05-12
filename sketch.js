@@ -9,7 +9,6 @@ let currentEarringIndex = 0; // 目前顯示的耳環索引
 let maskImage; // 儲存面具圖片
 
 function preload() {
-  // 預載 5 張耳環圖片，路徑更新為 pic/ 目錄下
   earringImages.push(loadImage('pic/acc1_ring.png'));
   earringImages.push(loadImage('pic/acc2_pearl.png'));
   earringImages.push(loadImage('pic/acc3_tassel.png'));
@@ -29,7 +28,7 @@ function setup() {
   faceMesh.detectStart(capture, gotFaces);
 
   // 初始化 handPose 並開始偵測
-  handPose = ml5.handPose(capture, { flipHorizontal: false });
+  handPose = ml5.handPose({ flipHorizontal: false });
   handPose.detectStart(capture, gotHands);
 }
 
